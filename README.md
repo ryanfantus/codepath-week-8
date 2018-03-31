@@ -20,9 +20,15 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 ## Blue
 
 Vulnerability #1: SQL Injection
-Steps:
-* step 1
-* step 2
+Steps to reproduce:
+* Open "Blue" Globitek site
+* Click the "Find a Salesperson" link
+* Select any salesperson
+* Notice website presents a php with a query, for example {<url>/salesperson.php?id=4}
+* Appent a {'} character to the end and reload the page
+* Error message "Database Query Failed" results, so SQL query is not sanitized and is vulnerable
+<img src="Blue 1 - SQL Injection.gif" width="800">
+
 
 Vulnerability #2: __________________
 
