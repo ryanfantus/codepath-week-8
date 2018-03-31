@@ -21,8 +21,8 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 
 Vulnerability #1: SQL Injection
 Steps:
-# step 1
-# step 2
+* step 1
+* step 2
 
 Vulnerability #2: __________________
 
