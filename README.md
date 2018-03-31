@@ -29,9 +29,16 @@ Steps to reproduce:
 * Error message "Database Query Failed" results, so SQL query is not sanitized and is vulnerable
 <img src="Blue 1 - SQL Injection.gif" width="800">
 
-
-Vulnerability #2: __________________
-
+Vulnerability #2: Session Hijacking
+Steps to reproduce:
+* Open "Blue" Globitek site
+* Click "Login" and provide user credentials
+* Open a new tab and access `<url>/public/hacktools/change_session_id.php`
+* Copy current session info to clipboard
+* Open a private browser and navigate to `<url>/public/hacktools/change_session_id.php`
+* Paste session informat and click "Change"
+* Go back to login page in private browser window, notice that you're already logged in
+<img src="Blue 2 - Session Hijack.gif" width="800">
 
 ## Green
 
