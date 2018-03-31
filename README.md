@@ -42,7 +42,13 @@ Vulnerability #2: __________________
 
 ## Red
 
-Vulnerability #1: __________________
+Vulnerability #1: IDOR (Insecure Direct Object Reference)
+Steps to reproduce:
+* Open "red" Globitek site
+* Click the "Find a Salesperson" link
+* Notice that the salesperson links all end in `<url>/salesperson.php?id=X` with X being a number from 1-9
+* Change this number to 10 and reveal an account that should not be made public
+<img src="Red 1 - IDOR.gif" width="800">
 
 Vulnerability #2: __________________
 
