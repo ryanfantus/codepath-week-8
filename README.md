@@ -43,7 +43,16 @@ Steps to reproduce:
 
 ## Green
 
-Vulnerability #1: __________________
+Vulnerability #1: Cross Site Scripting
+* Open "Green" Globitek site
+* On "Public Site" select "Contact"
+* Provide a fake username and fake email
+* In the "Feedback" body, paste `<script>alert(document.cookie)</script>`
+* Click "Submit"
+* Login as pperson and go to Staff Menu -> Feedback
+* Notice popup revealing that the XSS vulnerability is triggered
+* Note that this did not work on the other colors - the other sites transformed the needed `<` and `>` characters
+<img src="Green 1 - XSS.gif" width="800">
 
 Vulnerability #2: __________________
 
