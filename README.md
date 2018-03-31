@@ -30,7 +30,7 @@ Steps to reproduce:
 <img src="Blue 1 - SQL Injection.gif" width="800">
 
 Vulnerability #2: Session Hijacking
-It's worth mentioning that all sites seem to be vulnerable to this.
+It's worth mentioning that all sites(?) seem to be vulnerable to this.
 Steps to reproduce:
 * Open "Blue" Globitek site
 * Click "Login" and provide user credentials
@@ -44,6 +44,7 @@ Steps to reproduce:
 ## Green
 
 Vulnerability #1: Cross Site Scripting
+Steps to reproduce:
 * Open "Green" Globitek site
 * On "Public Site" select "Contact"
 * Provide a fake username and fake email
@@ -54,8 +55,15 @@ Vulnerability #1: Cross Site Scripting
 * Note that this did not work on the other colors - the other sites transformed the needed `<` and `>` characters
 <img src="Green 1 - XSS.gif" width="800">
 
-Vulnerability #2: __________________
-
+Vulnerability #2: Username Enumeration
+Steps to reproduce:
+* Open "Green" Globitek site
+* Click "Login"
+* Use a random character username and password combination
+* Notice the `Log in was unsuccessful` result
+* Try again, this time use a known user account "pperson" with an incorrect password
+* Notice the `Log in was unsuccessful` result, which is now bold
+<img src="Green 2 - Username Enumeration.gif" width="800">
 
 ## Red
 
