@@ -20,6 +20,7 @@ Each version of the site has been given two of the six vulnerabilities. (In othe
 ## Blue
 
 Vulnerability #1: SQL Injection
+
 Steps to reproduce:
 * Open "Blue" Globitek site
 * Click the "Find a Salesperson" link
@@ -30,7 +31,9 @@ Steps to reproduce:
 <img src="Blue 1 - SQL Injection.gif" width="800">
 
 Vulnerability #2: Session Hijacking
+
 It's worth mentioning that all sites(?) seem to be vulnerable to this.
+
 Steps to reproduce:
 * Open "Blue" Globitek site
 * Click "Login" and provide user credentials
@@ -44,6 +47,7 @@ Steps to reproduce:
 ## Green
 
 Vulnerability #1: Cross Site Scripting
+
 Steps to reproduce:
 * Open "Green" Globitek site
 * On "Public Site" select "Contact"
@@ -56,6 +60,7 @@ Steps to reproduce:
 <img src="Green 1 - XSS.gif" width="800">
 
 Vulnerability #2: Username Enumeration
+
 Steps to reproduce:
 * Open "Green" Globitek site
 * Click "Login"
@@ -68,6 +73,7 @@ Steps to reproduce:
 ## Red
 
 Vulnerability #1: IDOR (Insecure Direct Object Reference)
+
 Steps to reproduce:
 * Open "Red" Globitek site
 * Click the "Find a Salesperson" link
@@ -76,6 +82,7 @@ Steps to reproduce:
 <img src="Red 1 - IDOR.gif" width="800">
 
 Vulnerability #2: CSRF
+
 Steps to reproduce:
 * Open "Red" Globitek site
 * Login and click on "Staff Menu" -> "Users" and "Edit" a user
