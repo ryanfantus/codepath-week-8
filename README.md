@@ -30,6 +30,7 @@ Steps to reproduce:
 <img src="Blue 1 - SQL Injection.gif" width="800">
 
 Vulnerability #2: Session Hijacking
+It's worth mentioning that all sites seem to be vulnerable to this.
 Steps to reproduce:
 * Open "Blue" Globitek site
 * Click "Login" and provide user credentials
