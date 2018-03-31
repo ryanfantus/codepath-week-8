@@ -3,7 +3,7 @@ Facebook Codepath CyberSecurity coursework
 
 # Project 8 - Pentesting Live Targets
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 > Objective: Identify vulnerabilities in three different versions of the Globitek website: blue, green, and red.
 
@@ -89,4 +89,4 @@ Steps to reproduce:
 
 ## Notes
 
-Describe any challenges encountered while doing the work
+I didn't use any tools to do this aside from googling various attack testing vectors on the open internet. Most of my testing was trial and error. I'm not sure what I could do with most of these exploits, other than prove that they exist. I do plan to use sqlmap to expand on the SQLI vulnerability and will share my notes below if I discover anything.
