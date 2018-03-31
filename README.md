@@ -69,13 +69,22 @@ Steps to reproduce:
 
 Vulnerability #1: IDOR (Insecure Direct Object Reference)
 Steps to reproduce:
-* Open "red" Globitek site
+* Open "Red" Globitek site
 * Click the "Find a Salesperson" link
 * Notice that the salesperson links all end in `<url>/salesperson.php?id=X` with X being a number from 1-9
 * Change this number to 10 and reveal an account that should not be made public
 <img src="Red 1 - IDOR.gif" width="800">
 
-Vulnerability #2: __________________
+Vulnerability #2: CSRF
+Steps to reproduce:
+* Open "Red" Globitek site
+* Login and click on "Staff Menu" -> "Users" and "Edit" a user
+* Inspect the page element and change the value of `csrf_token` to something arbitrary
+* Change an aspect of the user account, for example the Name
+* Click "Update" and notice that the user account was changed in spite of the incorrect CSRF token
+* The other sites validated the CSRF token and prevented tampering with the incorrect token
+<img src="Red 2 - CSRF.gif" width="800">
+
 
 
 ## Notes
